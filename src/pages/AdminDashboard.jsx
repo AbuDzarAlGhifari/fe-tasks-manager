@@ -66,7 +66,8 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black p-6 grid grid-cols-1 md:grid-cols-4 gap-6">
+    <div className="min-h-screen bg-gray-50 p-6 grid grid-cols-1 md:grid-cols-4 gap-6">
+      {/* Sidebar User List */}
       <UserList
         users={users}
         selectedUser={selectedUser}
@@ -74,6 +75,8 @@ const AdminDashboard = () => {
         onPromote={handlePromote}
         onDelete={handleDeleteUser}
       />
+
+      {/* Main Task Panel */}
       <div className="md:col-span-3">
         <TaskPanel
           selectedUser={selectedUser}
@@ -88,6 +91,8 @@ const AdminDashboard = () => {
           onSearchChange={setSearchQuery}
         />
       </div>
+
+      {/* Modal untuk Form Task */}
       {modalOpen && (
         <Modal onClose={() => setModalOpen(false)}>
           <TaskForm

@@ -4,7 +4,7 @@ import TaskItem from './TaskItem';
 const TaskList = ({ tasks, onEdit, onDelete }) => {
   if (!tasks.length) {
     return (
-      <p className="text-center text-green-300 font-mono">No tasks available</p>
+      <p className="text-center text-gray-500 font-sans">No tasks available</p>
     );
   }
   return (

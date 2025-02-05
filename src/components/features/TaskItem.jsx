@@ -8,55 +8,55 @@ const TaskItem = ({ task, onEdit, onDelete }) => {
 
   const statusStyles = {
     'To Do': {
-      border: 'border-gray-500',
-      statusBg: 'bg-gray-700 text-gray-300',
+      border: 'border-gray-300',
+      statusBg: 'bg-gray-100 text-gray-800',
     },
     'In Progress': {
-      border: 'border-yellow-500',
-      statusBg: 'bg-yellow-700 text-yellow-300',
+      border: 'border-yellow-300',
+      statusBg: 'bg-yellow-100 text-yellow-800',
     },
     Completed: {
-      border: 'border-green-500',
-      statusBg: 'bg-green-700 text-green-300',
+      border: 'border-green-300',
+      statusBg: 'bg-green-100 text-green-800',
     },
   };
 
   const { border, statusBg } = statusStyles[task.status] || {
-    border: 'border-gray-500',
-    statusBg: 'bg-gray-700 text-gray-300',
+    border: 'border-gray-300',
+    statusBg: 'bg-gray-100 text-gray-800',
   };
 
   return (
     <>
       <div
-        className={`group p-6 bg-gray-800 rounded-xl border-l-4 ${border} hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 shadow-md`}
+        className={`group p-6 bg-white rounded-xl border-l-4 ${border} hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`}
       >
         <div className="flex justify-between items-start">
           <div>
-            <h3 className="text-xl font-bold text-gray-100 mb-2 font-mono">
+            <h3 className="text-xl font-bold text-gray-800 mb-2">
               {task.title}
             </h3>
           </div>
           <div className="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
             <button
               onClick={() => onEdit(task)}
-              className="rounded-lg hover:bg-gray-700 transition-colors"
+              className="rounded-md hover:bg-gray-100 transition-colors"
               aria-label="Edit task"
             >
-              <FaEdit className="w-5 h-5 text-blue-400" />
+              <FaEdit className="w-5 h-5 text-blue-500" />
             </button>
             <button
               onClick={() => onDelete(task.id)}
-              className="rounded-lg hover:bg-gray-700 transition-colors"
+              className="rounded-md hover:bg-gray-100 transition-colors"
               aria-label="Delete task"
             >
-              <FaTrash className="w-5 h-5 text-red-400" />
+              <FaTrash className="w-5 h-5 text-red-500" />
             </button>
             <button
               onClick={() => setIsModalOpen(true)}
-              className="rounded-lg hover:bg-gray-700 transition-colors"
+              className="rounded-md hover:bg-gray-100 transition-colors"
             >
-              <FaInfoCircle className="w-5 h-5 text-green-400" />
+              <FaInfoCircle className="w-5 h-5 text-indigo-500" />
             </button>
           </div>
         </div>
@@ -74,10 +74,10 @@ const TaskItem = ({ task, onEdit, onDelete }) => {
       {isModalOpen && (
         <Modal onClose={() => setIsModalOpen(false)}>
           <div className="p-6">
-            <h2 className="text-2xl font-bold mb-3 text-gray-100">
+            <h2 className="text-2xl font-bold mb-3 text-gray-800">
               {task.title}
             </h2>
-            <p className="text-gray-300">{task.description}</p>
+            <p className="text-gray-700">{task.description}</p>
             <div className="mt-4">
               <span
                 className={`px-3 py-1 rounded-full text-sm font-medium ${statusBg}`}

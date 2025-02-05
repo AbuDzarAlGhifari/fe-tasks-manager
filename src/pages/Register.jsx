@@ -24,9 +24,9 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-800 to-black">
-      <div className="max-w-md w-full bg-gray-900 p-8 rounded-lg shadow-lg border border-green-500">
-        <h1 className="text-3xl font-bold text-center mb-6 text-green-400 font-mono">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+        <h1 className="text-3xl font-bold text-center mb-6 text-blue-600 font-mono">
           Register
         </h1>
         <form onSubmit={handleSubmit}>
@@ -35,7 +35,7 @@ const Register = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Your username"
-            className="bg-gray-800 text-green-300 border-green-500"
+            className="bg-gray-50 text-gray-900 border-gray-300"
           />
           <Input
             label="Email"
@@ -43,23 +43,23 @@ const Register = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your-email@example.com"
-            className="bg-gray-800 text-green-300 border-green-500"
+            className="bg-gray-50 text-gray-900 border-gray-300"
           />
           <PasswordInput
             label="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Your password"
-            className="bg-gray-800 text-green-300 border-green-500"
+            className="bg-gray-50 text-gray-900 border-gray-300"
           />
-          <Button type="submit" className="bg-green-500 hover:bg-green-600">
+          <Button type="submit" className="bg-blue-500 hover:bg-blue-600">
             Register
           </Button>
         </form>
-        <p className="mt-4 text-center text-green-400 font-mono">
+        <p className="mt-4 text-center text-gray-600 font-mono">
           Sudah punya akun?{' '}
-          <Link to="/login" className="text-green-300 hover:underline">
-            Login disini
+          <Link to="/login" className="text-blue-500 hover:underline">
+            Login di sini
           </Link>
         </p>
       </div>

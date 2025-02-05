@@ -3,15 +3,14 @@ import React from 'react';
 const Modal = ({ children, onClose }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
-      {/* Overlay */}
       <div
-        className="absolute inset-0 bg-black opacity-60"
+        className="absolute inset-0 bg-black opacity-50"
         onClick={onClose}
       ></div>
-      {/* Kontainer Modal */}
-      <div className="bg-gray-900 rounded-lg shadow-2xl z-50 p-6 w-full max-w-lg relative border border-green-500">
+
+      <div className="bg-white rounded-lg shadow-xl z-50 p-6 w-full max-w-lg relative">
         <button
-          className="absolute top-2 right-2 text-green-400 hover:text-green-300 text-2xl leading-none"
+          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl"
           onClick={onClose}
         >
           &times;

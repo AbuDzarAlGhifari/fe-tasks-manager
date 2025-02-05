@@ -28,10 +28,10 @@ const TaskPanel = ({
       : [];
 
   return (
-    <div className="bg-gray-900 rounded-lg shadow-2xl p-6 border border-green-500">
+    <div className="bg-white rounded-lg shadow-xl p-6 border border-gray-200">
       {selectedUser ? (
         <>
-          <h1 className="text-3xl font-bold mb-4 text-green-400 font-mono text-center">
+          <h1 className="text-3xl font-bold mb-4 text-gray-800 text-center">
             {selectedUser.username}&apos;s Tasks
           </h1>
 
@@ -49,14 +49,14 @@ const TaskPanel = ({
           {filteredTasks.length > 0 ? (
             <TaskList tasks={filteredTasks} onEdit={onEdit} />
           ) : (
-            <p className="text-center text-green-300 font-mono italic">
+            <p className="text-center text-gray-500 italic">
               No tasks available for {selectedUser.username} with status &apos;
               {selectedStatus}&apos;
             </p>
           )}
         </>
       ) : (
-        <h1 className="text-2xl font-bold text-center text-green-300 font-mono">
+        <h1 className="text-2xl font-bold text-center text-gray-500">
           Select a user to view tasks
         </h1>
       )}

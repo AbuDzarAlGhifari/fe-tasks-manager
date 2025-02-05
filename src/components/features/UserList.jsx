@@ -8,10 +8,8 @@ const UserList = ({
   onDelete,
 }) => {
   return (
-    <div className="bg-gray-900 border border-green-500 rounded-lg shadow-lg p-4">
-      <h2 className="text-2xl font-bold mb-4 text-green-400 font-mono">
-        Users
-      </h2>
+    <div className="bg-white border border-gray-200 rounded-lg shadow p-4">
+      <h2 className="text-2xl font-bold mb-4 text-gray-800">Users</h2>
       <ul>
         {users.map((user) => (
           <li
@@ -20,25 +18,31 @@ const UserList = ({
             className={`cursor-pointer p-3 rounded mb-2 flex justify-between items-center 
               ${
                 selectedUser?.id === user.id
-                  ? 'bg-green-700 text-black'
-                  : 'bg-gray-800 hover:bg-green-900 text-green-300'
+                  ? 'bg-blue-100'
+                  : 'bg-white hover:bg-gray-100'
               }
-              transition-all duration-200 border border-green-500`}
+              transition-all duration-200 border border-gray-200`}
           >
             <div className="flex items-center gap-2">
-              <span className="font-mono">{user.username}</span>
+              <span className="font-sans text-gray-800">{user.username}</span>
               {user.role === 'user' && (
                 <button
-                  onClick={(e) => onPromote(user, e)}
-                  className="text-xs bg-green-500 hover:bg-green-600 text-black px-3 py-1 rounded font-bold"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onPromote(user, e);
+                  }}
+                  className="text-xs bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded font-bold"
                 >
                   Promote
                 </button>
               )}
             </div>
             <button
-              onClick={(e) => onDelete(user, e)}
-              className="text-xs bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded font-bold"
+              onClick={(e) => {
+                e.stopPropagation();
+                onDelete(user, e);
+              }}
+              className="text-xs bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded font-bold"
             >
               Delete
             </button>

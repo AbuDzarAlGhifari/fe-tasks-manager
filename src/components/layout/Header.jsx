@@ -13,36 +13,54 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-black text-green-400 py-4 px-6 flex justify-between items-center border-b border-green-500 shadow-lg">
+    <header className="bg-white text-gray-800 py-4 px-6 flex justify-between items-center border-b border-gray-200 shadow">
       <div className="flex items-center space-x-6">
         <Link
           to="/"
-          className="flex items-center space-x-2 hover:text-green-300 transition-colors duration-200"
+          className="flex items-center space-x-2 hover:text-blue-500 transition-colors duration-200"
         >
           <FiHome size={20} />
-          <span className="font-mono text-lg">Home</span>
+          <span className="font-sans text-lg">Home</span>
         </Link>
+
+        {user && (
+          <Link
+            to="/groups"
+            className="flex items-center space-x-2 hover:text-blue-500 transition-colors duration-200"
+          >
+            <FiUsers size={20} />
+            <span className="font-sans text-lg">Groups</span>
+          </Link>
+        )}
+
         {user?.role === 'admin' && (
           <Link
             to="/admin"
-            className="flex items-center space-x-2 hover:text-green-300 transition-colors duration-200"
+            className="flex items-center space-x-2 hover:text-blue-500 transition-colors duration-200"
           >
             <FiUsers size={20} />
-            <span className="font-mono text-lg">Admin</span>
+            <span className="font-sans text-lg">Admin</span>
           </Link>
         )}
       </div>
+
       <div className="flex items-center space-x-4">
         {user && (
           <div className="flex items-center space-x-1">
-            <FiUser size={20} className="text-green-400" />
-            <span className="font-mono text-green-300">{user.username}</span>
+            <FiUser size={20} className="text-gray-800" />
+
+            <Link
+              to="/profile"
+              className="font-sans text-gray-800 hover:text-blue-500 transition-colors duration-200"
+            >
+              {user.username}
+            </Link>
           </div>
         )}
         {user && (
           <button
             onClick={handleLogout}
-            className="hover:text-red-400 transition-colors duration-200"
+            className="hover:text-red-500 transition-colors duration-200"
           >
             <FiLogOut size={20} />
           </button>

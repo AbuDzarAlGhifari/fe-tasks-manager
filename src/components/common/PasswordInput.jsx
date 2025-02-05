@@ -15,27 +15,25 @@ const PasswordInput = ({
   };
 
   return (
-    <div className="flex flex-col mb-4 relative">
+    <div className="relative flex flex-col mb-4">
       {label && (
-        <label className="mb-1 font-mono font-medium text-green-400">
-          {label}
-        </label>
+        <label className="mb-1 font-medium text-gray-700">{label}</label>
       )}
       <input
         type={showPassword ? 'text' : 'password'}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className={`border border-green-500 rounded px-4 py-2 bg-gray-700 text-green-400 focus:outline-none focus:ring-2 focus:ring-green-600 transition duration-150 w-full ${className}`}
+        className={`border border-gray-300 rounded-md px-4 py-2 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-150 w-full ${className}`}
       />
       <div
-        className="absolute inset-y-0 right-3 top-7 flex items-center cursor-pointer"
+        className="absolute inset-y-0 right-3 flex items-center cursor-pointer"
         onClick={toggleShowPassword}
       >
         {showPassword ? (
-          <FiEyeOff size={20} className="text-green-400" />
+          <FiEyeOff size={20} className="text-gray-500" />
         ) : (
-          <FiEye size={20} className="text-green-400" />
+          <FiEye size={20} className="text-gray-500" />
         )}
       </div>
     </div>

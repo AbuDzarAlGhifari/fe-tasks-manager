@@ -26,9 +26,9 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-800 to-black">
-      <div className="max-w-md w-full bg-gray-900 p-8 rounded-lg shadow-2xl border border-green-500">
-        <h1 className="text-3xl font-mono font-bold text-center mb-6 text-green-400">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+        <h1 className="text-3xl font-mono font-bold text-center mb-6 text-blue-600">
           Login
         </h1>
         <form onSubmit={handleSubmit}>
@@ -38,23 +38,23 @@ const Login = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your-email@example.com"
-            className="bg-gray-800 text-green-300 border-green-500"
+            className="bg-gray-50 text-gray-900 border-gray-300"
           />
           <PasswordInput
             label="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Your password"
-            className="bg-gray-800 text-green-300 border-green-500"
+            className="bg-gray-50 text-gray-900 border-gray-300"
           />
-          <Button type="submit" className="bg-green-600 hover:bg-green-700">
+          <Button type="submit" className="bg-blue-500 hover:bg-blue-600">
             Login
           </Button>
         </form>
-        <p className="mt-4 text-center text-green-300">
+        <p className="mt-4 text-center text-gray-600">
           Belum punya akun?{' '}
-          <Link to="/register" className="text-green-500 hover:underline">
-            Daftar disini
+          <Link to="/register" className="text-blue-500 hover:underline">
+            Daftar di sini
           </Link>
         </p>
       </div>
