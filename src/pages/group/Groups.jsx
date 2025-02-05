@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { getJoinedGroups, createGroup } from '../services/groups';
+import { getJoinedGroups, createGroup } from '../../services/groups';
 import { toast } from 'react-hot-toast';
-import Modal from '../components/common/Modal';
+import Modal from '../../components/common/Modal';
 import { useNavigate } from 'react-router-dom';
 
 const Groups = () => {

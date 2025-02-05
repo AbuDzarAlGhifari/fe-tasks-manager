@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
-import Input from '../components/common/Input';
-import PasswordInput from '../components/common/PasswordInput';
-import Button from '../components/common/Button';
-import { login as loginService } from '../services/auth';
-import { AuthContext } from '../contexts/AuthContext';
+import { login as loginService } from '@/services/auth';
+import { AuthContext } from '@/contexts/AuthContext';
 import { toast } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
+import Input from '@/components/common/Input';
+import PasswordInput from '@/components/common/PasswordInput';
+import Button from '@/components/common/Button';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -26,7 +26,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="min-h-screen flex items-center justify-center">
       <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-lg border border-gray-200">
         <h1 className="text-3xl font-mono font-bold text-center mb-6 text-blue-600">
           Login
@@ -37,14 +37,14 @@ const Login = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="your-email@example.com"
+            placeholder="email@example.com"
             className="bg-gray-50 text-gray-900 border-gray-300"
           />
           <PasswordInput
             label="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Your password"
+            placeholder="password"
             className="bg-gray-50 text-gray-900 border-gray-300"
           />
           <Button type="submit" className="bg-blue-500 hover:bg-blue-600">

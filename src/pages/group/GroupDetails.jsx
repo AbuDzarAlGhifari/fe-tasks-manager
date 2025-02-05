@@ -4,14 +4,14 @@ import {
   getGroupTasks,
   getGroupMembers,
   addMemberToGroup,
-} from '../services/groups';
-import { API_URL } from '../utils/constants';
+} from '../../services/groups';
+import { API_URL } from '../../utils/constants';
 import { toast } from 'react-hot-toast';
-import Modal from '../components/common/Modal';
-import TaskList from '../components/features/TaskList';
-import Input from '../components/common/Input';
-import Textarea from '../components/common/Textarea';
-import Button from '../components/common/Button';
+import Modal from '../../components/common/Modal';
+import TaskList from '../../components/features/TaskList';
+import Input from '../../components/common/Input';
+import Textarea from '../../components/common/Textarea';
+import Button from '../../components/common/Button';
 
 const GroupDetails = () => {
   const { id } = useParams(); // Group ID

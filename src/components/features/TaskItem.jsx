@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaEdit, FaTrash, FaInfoCircle } from 'react-icons/fa';
+import { FaEdit, FaInfoCircle, FaTrash } from 'react-icons/fa';
 import { HiStatusOnline } from 'react-icons/hi';
 import Modal from '../common/Modal';
 

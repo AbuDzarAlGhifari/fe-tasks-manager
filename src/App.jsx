@@ -6,8 +6,8 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import { AuthContext } from './contexts/AuthContext';
-import Groups from './pages/Groups';
-import GroupDetails from './pages/GroupDetails';
+import Groups from './pages/group/Groups';
+import GroupDetails from './pages/group/GroupDetails';
 import Profile from './pages/Profile';
 
 const ProtectedRoute = ({ children }) => {

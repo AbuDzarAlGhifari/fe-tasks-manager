@@ -24,10 +24,10 @@ const PasswordInput = ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className={`border border-gray-300 rounded-md px-4 py-2 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-150 w-full ${className}`}
+        className={`border border-gray-300 rounded-md px-3 py-2 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400 ${className}`}
       />
       <div
-        className="absolute inset-y-0 right-3 flex items-center cursor-pointer"
+        className="absolute inset-y-0 right-3 flex top-7 items-center cursor-pointer"
         onClick={toggleShowPassword}
       >
         {showPassword ? (

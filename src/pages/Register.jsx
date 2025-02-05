@@ -34,7 +34,7 @@ const Register = () => {
             label="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Your username"
+            placeholder="username"
             className="bg-gray-50 text-gray-900 border-gray-300"
           />
           <Input
@@ -42,14 +42,14 @@ const Register = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="your-email@example.com"
+            placeholder="email@example.com"
             className="bg-gray-50 text-gray-900 border-gray-300"
           />
           <PasswordInput
             label="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Your password"
+            placeholder="password"
             className="bg-gray-50 text-gray-900 border-gray-300"
           />
           <Button type="submit" className="bg-blue-500 hover:bg-blue-600">

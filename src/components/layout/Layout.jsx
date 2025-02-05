@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import SidebarLayout from '../common/sidebar/SideBarLayout';
+import SidebarLayout from './sidebar/SidebarLayout';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   return (
     <div className="flex">
       {!hideSidebar && <SidebarLayout />}
-      <main className="flex-1 h-screen overflow-y-auto p-6 bg-gray-100">
+      <main className="flex-1 h-screen overflow-y-auto bg-gray-100">
         {children}
       </main>
     </div>
