@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Input from '../components/common/Input';
-import PasswordInput from '../components/common/PasswordInput';
-import Button from '../components/common/Button';
-import { register as registerService } from '../services/auth';
+import { register as registerService } from '@/services/auth';
 import { toast } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
+import Input from '@/components/common/Input';
+import PasswordInput from '@/components/common/PasswordInput';
+import Button from '@/components/common/Button';
 
 const Register = () => {
   const [username, setUsername] = useState('');

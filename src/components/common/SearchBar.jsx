@@ -12,7 +12,7 @@ const SearchBar = ({ searchQuery, onSearchChange }) => {
         value={searchQuery}
         onChange={(e) => onSearchChange(e.target.value)}
         placeholder="Search tasks..."
-        className="border border-gray-300 rounded-md px-3 py-2 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="border border-gray-300 rounded-md px-3 py-2 bg-gray-50 w-full sm:w-fit text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
     </div>
   );

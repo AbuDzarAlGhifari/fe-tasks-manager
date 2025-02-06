@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   return (
     <div className="flex">
       {!hideSidebar && <SidebarLayout />}
-      <main className="flex-1 h-screen overflow-y-auto bg-gray-100">
+      <main className="flex-1 h-screen lg:pt-0 pt-16 overflow-y-auto bg-gray-100">
         {children}
       </main>
     </div>

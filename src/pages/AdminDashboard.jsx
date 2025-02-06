@@ -1,12 +1,12 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { getAdminTasks } from '../services/tasks';
-import { getUsers, promoteUser, deleteUser } from '../services/user';
-import { AuthContext } from '../contexts/AuthContext';
-import TaskPanel from '../components/features/TaskPanel';
-import Modal from '../components/common/Modal';
-import TaskForm from '../components/features/TaskForm';
+import Modal from '@/components/common/Modal';
+import TaskForm from '@/components/features/TaskForm';
+import TaskPanel from '@/components/features/TaskPanel';
+import UserList from '@/components/features/UserList';
+import { AuthContext } from '@/contexts/AuthContext';
+import { getAdminTasks } from '@/services/tasks';
+import { deleteUser, getUsers, promoteUser } from '@/services/user';
+import { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
-import UserList from '../components/features/UserList';
 
 const AdminDashboard = () => {
   const [tasks, setTasks] = useState([]);
@@ -66,8 +66,7 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6 grid grid-cols-1 md:grid-cols-4 gap-6">
-      {/* Sidebar User List */}
+    <div className="min-h-screen bg-gray-50 p-6 space-y-4">
       <UserList
         users={users}
         selectedUser={selectedUser}
@@ -76,8 +75,7 @@ const AdminDashboard = () => {
         onDelete={handleDeleteUser}
       />
 
-      {/* Main Task Panel */}
-      <div className="md:col-span-3">
+      <div>
         <TaskPanel
           selectedUser={selectedUser}
           tasks={tasks}

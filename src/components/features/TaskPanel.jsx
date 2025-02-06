@@ -31,7 +31,7 @@ const TaskPanel = ({
     <div className="bg-white rounded-lg shadow-xl p-6 border border-gray-200">
       {selectedUser ? (
         <>
-          <h1 className="text-3xl font-bold mb-4 text-gray-800 text-center">
+          <h1 className="text-3xl font-bold mb-4 text-gray-800 capitalize">
             {selectedUser.username}&apos;s Tasks
           </h1>
 

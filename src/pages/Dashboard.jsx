@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import TaskForm from '../components/features/TaskForm';
-import TaskList from '../components/features/TaskList';
-import Modal from '../components/common/Modal';
-import SearchBar from '../components/common/SearchBar';
-import { getTasks, deleteTask } from '../services/tasks';
+import Modal from '@/components/common/Modal';
+import SearchBar from '@/components/common/SearchBar';
+import TaskFilter from '@/components/features/TaskFilter';
+import TaskForm from '@/components/features/TaskForm';
+import TaskList from '@/components/features/TaskList';
+import { deleteTask, getTasks } from '@/services/tasks';
+import { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
 
 const Dashboard = () => {
@@ -68,32 +69,17 @@ const Dashboard = () => {
   });
 
   return (
-    <div className="p-6 min-h-screen bg-gray-50">
-      <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+    <div className="p-2 sm:p-6 min-h-screen bg-gray-50">
+      <div className="bg-white p-3 sm:p-6 rounded-lg shadow-lg border border-gray-200">
+        <div className="flex flex-col md:flex-row justify-between sm:items-center mb-6 gap-4">
           <h1 className="text-3xl font-bold mb-4 md:mb-0 text-gray-800 font-sans">
-            Your Tasks
+            Tasks
           </h1>
-          <div className="flex flex-col md:flex-row items-center gap-3">
-            <div className="flex items-center gap-2">
-              <label
-                htmlFor="statusFilter"
-                className="font-medium text-gray-700 font-sans"
-              >
-                Filter:
-              </label>
-              <select
-                id="statusFilter"
-                value={selectedStatus}
-                onChange={(e) => setSelectedStatus(e.target.value)}
-                className="border border-gray-300 rounded px-3 py-2 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              >
-                <option value="All">All</option>
-                <option value="To Do">To Do</option>
-                <option value="In Progress">In Progress</option>
-                <option value="Completed">Completed</option>
-              </select>
-            </div>
+          <div className="flex flex-col md:flex-row sm:items-center gap-3">
+            <TaskFilter
+              selectedStatus={selectedStatus}
+              onStatusChange={setSelectedStatus}
+            />
 
             <SearchBar
               searchQuery={searchQuery}

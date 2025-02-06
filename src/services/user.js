@@ -1,5 +1,5 @@
+import { API_URL } from '@/utils/constants';
 import axios from 'axios';
-import { API_URL } from '../utils/constants';
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem('token');
