@@ -9,16 +9,17 @@ import { AuthContext } from './contexts/AuthContext';
 import Groups from './pages/group/Groups';
 import GroupDetails from './pages/group/GroupDetails';
 import Profile from './pages/Profile';
+import Loading from './components/common/Loading';
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
   return user ? children : <Navigate to="/login" />;
 };
 
 const PublicRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
   return !user ? children : <Navigate to="/" />;
 };
 

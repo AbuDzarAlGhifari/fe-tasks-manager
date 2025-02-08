@@ -1,16 +1,13 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import { FiUser } from 'react-icons/fi';
+import Loading from '@/components/common/Loading';
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
 
   if (!user) {
-    return (
-      <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow text-center">
-        <p className="text-gray-600">Loading...</p>
-      </div>
-    );
+    return <Loading />;
   }
 
   return (
