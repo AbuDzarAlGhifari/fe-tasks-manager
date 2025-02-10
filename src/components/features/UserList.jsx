@@ -16,6 +16,8 @@ const UserList = ({
           return (
             <li
               key={user.id}
+              role="button"
+              tabIndex={0}
               onClick={() => onUserSelect(user)}
               className={`cursor-pointer flex items-center justify-between p-4 rounded-lg transition-colors duration-200 border border-gray-200 ${
                 isSelected ? 'bg-blue-50' : 'bg-white hover:bg-gray-50'

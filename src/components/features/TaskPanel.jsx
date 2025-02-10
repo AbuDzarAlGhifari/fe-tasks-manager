@@ -35,7 +35,7 @@ const TaskPanel = ({
             {selectedUser.username}&apos;s Tasks
           </h1>
 
-          <div className="flex flex-col md:flex-row items-center gap-4 mb-4">
+          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
             <TaskFilter
               selectedStatus={selectedStatus}
               onStatusChange={onStatusChange}
